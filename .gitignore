@@ -1,0 +1,20 @@
+# R specific
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Data files
+*.csv
+*.xlsx
+*.xls
+
+# Output files
+*.png
+*.pdf
+*.html
+
+# OS specific
+.DS_Store
+Thumbs.db
