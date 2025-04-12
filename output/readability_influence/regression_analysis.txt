@@ -1,0 +1,363 @@
+可讀性回歸分析結果
+==========================
+
+
+FRE 指標分析:
+-------------
+問題對AI回答的影響:
+
+Call:
+lm(formula = as.formula(paste(ai_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.7274 -0.6301  0.0058  0.6554  3.1970 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -2.103e-17  1.796e-02    0.00        1    
+Q_FRE        1.169e-01  1.796e-02    6.51 8.72e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9933 on 3057 degrees of freedom
+Multiple R-squared:  0.01368,	Adjusted R-squared:  0.01335 
+F-statistic: 42.39 on 1 and 3057 DF,  p-value: 8.723e-11
+
+
+問題對人類回答的影響:
+
+Call:
+lm(formula = as.formula(paste(h_col, "~", q_col)), data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-18.1983  -0.5573   0.0862   0.6635   2.3191 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 8.680e-17  1.801e-02   0.000        1    
+Q_FRE       8.730e-02  1.802e-02   4.845 1.33e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9963 on 3057 degrees of freedom
+Multiple R-squared:  0.007622,	Adjusted R-squared:  0.007297 
+F-statistic: 23.48 on 1 and 3057 DF,  p-value: 1.327e-06
+
+
+
+FK 指標分析:
+-------------
+問題對AI回答的影響:
+
+Call:
+lm(formula = as.formula(paste(ai_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.9733 -0.6818 -0.0063  0.6524  3.9749 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -3.488e-16  1.800e-02   0.000        1    
+Q_FK         9.750e-02  1.800e-02   5.417 6.54e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9954 on 3057 degrees of freedom
+Multiple R-squared:  0.009507,	Adjusted R-squared:  0.009183 
+F-statistic: 29.34 on 1 and 3057 DF,  p-value: 6.538e-08
+
+
+問題對人類回答的影響:
+
+Call:
+lm(formula = as.formula(paste(h_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.0885 -0.6251 -0.1017  0.4684 11.5164 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -9.261e-17  1.804e-02   0.000 1.000000    
+Q_FK         6.804e-02  1.804e-02   3.771 0.000166 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9978 on 3057 degrees of freedom
+Multiple R-squared:  0.00463,	Adjusted R-squared:  0.004304 
+F-statistic: 14.22 on 1 and 3057 DF,  p-value: 0.0001658
+
+
+
+ARI 指標分析:
+-------------
+問題對AI回答的影響:
+
+Call:
+lm(formula = as.formula(paste(ai_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.0118 -0.6853  0.0132  0.6611  3.8188 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -2.782e-17  1.783e-02   0.000        1    
+Q_ARI        1.654e-01  1.784e-02   9.275   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9864 on 3057 degrees of freedom
+Multiple R-squared:  0.02737,	Adjusted R-squared:  0.02705 
+F-statistic: 86.03 on 1 and 3057 DF,  p-value: < 2.2e-16
+
+
+問題對人類回答的影響:
+
+Call:
+lm(formula = as.formula(paste(h_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.0836 -0.5792 -0.0873  0.4197 22.3046 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -9.144e-18  1.803e-02   0.000        1    
+Q_ARI        8.012e-02  1.803e-02   4.444 9.15e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9969 on 3057 degrees of freedom
+Multiple R-squared:  0.006419,	Adjusted R-squared:  0.006094 
+F-statistic: 19.75 on 1 and 3057 DF,  p-value: 9.147e-06
+
+
+
+CLI 指標分析:
+-------------
+問題對AI回答的影響:
+
+Call:
+lm(formula = as.formula(paste(ai_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.3218 -0.6439  0.0013  0.6434  3.7571 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -3.385e-16  1.750e-02    0.00        1    
+Q_CLI        2.514e-01  1.751e-02   14.36   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9681 on 3057 degrees of freedom
+Multiple R-squared:  0.06318,	Adjusted R-squared:  0.06288 
+F-statistic: 206.2 on 1 and 3057 DF,  p-value: < 2.2e-16
+
+
+問題對人類回答的影響:
+
+Call:
+lm(formula = as.formula(paste(h_col, "~", q_col)), data = data)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.061 -0.481 -0.036  0.435 36.215 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.456e-16  1.803e-02   0.000        1    
+Q_CLI       7.881e-02  1.803e-02   4.371 1.28e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9971 on 3057 degrees of freedom
+Multiple R-squared:  0.006212,	Adjusted R-squared:  0.005886 
+F-statistic: 19.11 on 1 and 3057 DF,  p-value: 1.277e-05
+
+
+
+GFI 指標分析:
+-------------
+問題對AI回答的影響:
+
+Call:
+lm(formula = as.formula(paste(ai_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.0018 -0.6831  0.0185  0.6683  3.9412 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 3.217e-16  1.802e-02    0.00        1    
+Q_GFI       8.059e-02  1.803e-02    4.47  8.1e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9969 on 3057 degrees of freedom
+Multiple R-squared:  0.006494,	Adjusted R-squared:  0.006169 
+F-statistic: 19.98 on 1 and 3057 DF,  p-value: 8.097e-06
+
+
+問題對人類回答的影響:
+
+Call:
+lm(formula = as.formula(paste(h_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.2354 -0.6532 -0.1065  0.4995  9.0652 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -1.815e-16  1.804e-02   0.000 1.000000    
+Q_GFI        6.715e-02  1.805e-02   3.721 0.000202 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9979 on 3057 degrees of freedom
+Multiple R-squared:  0.004509,	Adjusted R-squared:  0.004183 
+F-statistic: 13.85 on 1 and 3057 DF,  p-value: 0.0002019
+
+
+
+SMOG 指標分析:
+-------------
+問題對AI回答的影響:
+
+Call:
+lm(formula = as.formula(paste(ai_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.8556 -0.6917  0.0275  0.6822  4.0555 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 2.777e-16  1.803e-02   0.000        1    
+Q_SMOG      7.422e-02  1.804e-02   4.115 3.97e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9974 on 3057 degrees of freedom
+Multiple R-squared:  0.005509,	Adjusted R-squared:  0.005183 
+F-statistic: 16.93 on 1 and 3057 DF,  p-value: 3.973e-05
+
+
+問題對人類回答的影響:
+
+Call:
+lm(formula = as.formula(paste(h_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.9314 -0.6789 -0.0610  0.6440  5.7099 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.291e-16  1.803e-02   0.000        1    
+Q_SMOG      7.923e-02  1.803e-02   4.395 1.15e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.997 on 3057 degrees of freedom
+Multiple R-squared:  0.006278,	Adjusted R-squared:  0.005953 
+F-statistic: 19.31 on 1 and 3057 DF,  p-value: 1.147e-05
+
+
+
+LIX 指標分析:
+-------------
+問題對AI回答的影響:
+
+Call:
+lm(formula = as.formula(paste(ai_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.0025 -0.6824  0.0170  0.6680  3.9411 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -1.363e-17  1.802e-02   0.000        1    
+Q_LIX        8.049e-02  1.803e-02   4.465  8.3e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9969 on 3057 degrees of freedom
+Multiple R-squared:  0.006479,	Adjusted R-squared:  0.006154 
+F-statistic: 19.94 on 1 and 3057 DF,  p-value: 8.299e-06
+
+
+問題對人類回答的影響:
+
+Call:
+lm(formula = as.formula(paste(h_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.2350 -0.6532 -0.1066  0.5004  9.0645 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 7.126e-17  1.804e-02   0.000    1e+00    
+Q_LIX       6.720e-02  1.805e-02   3.724    2e-04 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9979 on 3057 degrees of freedom
+Multiple R-squared:  0.004516,	Adjusted R-squared:  0.00419 
+F-statistic: 13.87 on 1 and 3057 DF,  p-value: 0.0001996
+
+
+
+RIX 指標分析:
+-------------
+問題對AI回答的影響:
+
+Call:
+lm(formula = as.formula(paste(ai_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.2808 -0.7289 -0.0435  0.6329  5.1795 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -2.550e-16  1.804e-02   0.000        1    
+Q_RIX        7.086e-02  1.804e-02   3.928 8.76e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9976 on 3057 degrees of freedom
+Multiple R-squared:  0.005021,	Adjusted R-squared:  0.004696 
+F-statistic: 15.43 on 1 and 3057 DF,  p-value: 8.764e-05
+
+
+問題對人類回答的影響:
+
+Call:
+lm(formula = as.formula(paste(h_col, "~", q_col)), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.7541 -0.6847 -0.1723  0.5236  8.9810 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -8.164e-17  1.804e-02   0.000        1    
+Q_RIX        7.283e-02  1.804e-02   4.038 5.53e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9975 on 3057 degrees of freedom
+Multiple R-squared:  0.005305,	Adjusted R-squared:  0.004979 
+F-statistic:  16.3 on 1 and 3057 DF,  p-value: 5.531e-05
+
+

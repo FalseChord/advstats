@@ -1,0 +1,29 @@
+一、首先進行資料清理
+    1. 為每筆資料加入 index
+    2. 移除不需要的字元，如特殊字元、多餘的空白、URL 等
+    3. 將長度最長的 5% 的資料截斷，將長度最短的 5% 的資料移除
+
+二、進行資料預處理
+    0. 把資料分為三類：Context、Response、LLM
+    1. 計算基本指標：字元數、字元長度、句數、句子長度
+    2. 計算詞彙多樣性指標：Type Token Ratio (TTR)、Herdan's C、Honore's R、Flesch Reading Ease、Flesch Kincaid Grade、Automated Readability Index、Coleman-Liau Index、Gunning Fog Index、SMOG Index、LIX Score、RIX Score
+    3. 計算可讀性指標：Flesch Reading Ease、Flesch Kincaid Grade、Automated Readability Index、Coleman-Liau Index、Gunning Fog Index、SMOG Index、LIX Score、RIX Score
+    4. 將所有參數標準化
+
+三、進行常態假設檢定
+    1. 對詞彙多樣性指標進行常態假設檢定
+        得到結果： TTR、Yule K、Simpson D、Herdan C、Brunet W 為接近常態
+    2. 對可讀性指標進行常態假設檢定
+        得到結果： Gunning Fog Index、SMOG Index、LIX Score 為接近常態
+
+四、進行 PCA 分析
+    1. 為詞彙多樣性指標進行 PCA 分析，找出影響最大的指標
+        得到結果： PC1, PC2 可解釋 91.82% 的變異，且除了 Brunet_W 外，兩群影響指標沒有交集，Brunet_W 在兩群中都有影響但影響方向相反
+            PC1 主要組成：TTR: 0.503、Herdan_C: 0.498、Brunet_W: -0.465、Yule_K: -0.438
+            PC2 主要組成：Simpson_D: -0.883、Brunet_W: 0.436
+    2. 為可讀性指標進行 PCA 分析，找出影響最大的指標
+        得到結果： PC1, PC2 可解釋 94.2% 的變異，且兩群影響指標沒有交集
+            PC1 主要組成：Gunning_Fog_Index: 0.370、LIX_Score: 0.370、Flesch_Kincaid_Grade: 0.370、RIX_Score: 0.363、SMOG_Index: 0.360、Flesch_Reading_Ease: -0.357、Automated_Readability_Index: 0.351
+            PC2 主要組成：Coleman_Liau_Index: 0.792
+
+五、進行迴歸分析
