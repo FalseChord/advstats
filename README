@@ -1,3 +1,7 @@
+零、選擇資料集與題目
+    1. 選擇資料集： https://www.kaggle.com/datasets/birdy654/human-and-llm-mental-health-conversations
+    2. 選擇題目： 心理健康問題的可讀性與詞彙多元性，對於 AI 與人類回答的影響程度有多高？
+
 一、首先進行資料清理
     1. 為每筆資料加入 index
     2. 移除不需要的字元，如特殊字元、多餘的空白、URL 等

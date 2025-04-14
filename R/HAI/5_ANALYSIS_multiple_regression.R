@@ -64,7 +64,7 @@ run_category_regression <- function(data) {
                           data = data)
   
   # 可讀性對AI的影響
-  ai_readability_model <- lm(AI_SMOG ~ Q_SMOG + Q_GFI, Q_LIX,
+  ai_readability_model <- lm(AI_SMOG ~ Q_SMOG + Q_GFI + Q_LIX,
                             data = data)
   
   # 詞彙多樣性對人類的影響
@@ -72,7 +72,7 @@ run_category_regression <- function(data) {
                              data = data)
   
   # 可讀性對人類的影響
-  human_readability_model <- lm(H_SMOG ~ Q_SMOG + Q_GFI, Q_LIX,
+  human_readability_model <- lm(H_SMOG ~ Q_SMOG + Q_GFI + Q_LIX,
                                data = data)
   
   return(list(
